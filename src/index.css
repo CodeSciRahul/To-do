@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+/* Add this to your CSS file or Tailwind configuration if needed */
+
+/* Transition the Sidebar sliding effect */
+.transition-transform {
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  /* Optionally, if you want an overlay */
+  .bg-opacity-50 {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
