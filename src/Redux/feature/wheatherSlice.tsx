@@ -19,10 +19,9 @@ export const fetchWeather = createAsyncThunk(
   "weather/fetchWeather",
   async (date: string, { rejectWithValue }) => {
     try {
-      // Convert the provided date into a UNIX timestamp
-      const timestamp = Math.floor(new Date(date).getTime() / 1000);
+      console.log(date)
       const response = await axios.get(
-        `https://api.openweathermap.org/data/2.5/onecall/timemachine?lat=30.7333&lon=76.7794&dt=${timestamp}&appid=${API_KEY}&units=metric`
+        `https://api.openweathermap.org/data/2.5/weather?q=Chandigarh&appid=${API_KEY}&units=metric`
       );
       return response.data;
     } catch (error) {
