@@ -1,6 +1,6 @@
 // File: src/components/Sidebar.tsx
 import React, { useState } from "react";
-import { Home, Star, CalendarToday, Assignment, Add } from "@mui/icons-material";
+import { Home, Star, CalendarToday, Add } from "@mui/icons-material";
 import {
   List,
   ListItem,
@@ -36,7 +36,6 @@ const Sidebar: React.FC = () => {
             { text: "All Tasks", icon: <Home /> },
             { text: "Today", icon: <CalendarToday /> },
             { text: "Important", icon: <Star /> },
-            { text: "Assigned to Me", icon: <Assignment /> },
           ].map((item, index) => (
             <ListItem
               component="li"

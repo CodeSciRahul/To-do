@@ -76,7 +76,7 @@ const TaskList: React.FC = () => {
           <Typography variant="h6" className="font-bold">
             Completed
           </Typography>
-          <div className={`space-y-2 ${view === "grid" ? "grid grid-cols-2 gap-4" : ""}`}>
+          <div className={`space-y-2 ${view === "grid" ? "grid grid-cols-1 sm:grid-cols-2 gap-4" : ""}`}>
             {tasks
               .filter((task) => task.completed)
               .map((task) =>

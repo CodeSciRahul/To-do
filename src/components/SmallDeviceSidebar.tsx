@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Home, Star, CalendarToday, Assignment, Add } from "@mui/icons-material";
+import { Home, Star, CalendarToday, Add } from "@mui/icons-material";
 import { List, ListItem, ListItemIcon, ListItemText, Avatar, Card } from "@mui/material";
 import { CustomPieChart } from "./PieChart";
 import { useNavigate } from "react-router-dom";
@@ -32,14 +32,14 @@ const SmallDeviceSidebar: React.FC<SidebarProps> = ({ open, onClose }) => {
 
   return (
     <div
-      className={`fixed inset-0 bg-gray-900 bg-opacity-50 z-10 transition-transform duration-300 ease-in-out ${
+      className={`fixed inset-0 z-50 bg-gray-900 bg-opacity-90 transition-transform duration-300 ease-in-out ${
         open ? "translate-x-0" : "-translate-x-full"
       }`}
       onClick={onClose}
     >
       <div
-        className={`w-64 h-full scroll-auto p-4 shadow-md transform transition-all duration-300 ${
-          theme === "dark" ? "bg-gray-800 text-white" : "bg-green-50 text-black"
+        className={`w-72 h-full scroll-auto p-4 shadow-md transform transition-all duration-300 ${
+          theme === "dark" ? "bg-gray-800 text-white" : "bg-green-200 text-black"
         }`} // Conditional styles based on theme
         onClick={(e) => e.stopPropagation()} // Prevent closing sidebar on inner click
       >
@@ -64,7 +64,6 @@ const SmallDeviceSidebar: React.FC<SidebarProps> = ({ open, onClose }) => {
               { text: "All Tasks", icon: <Home /> },
               { text: "Today", icon: <CalendarToday /> },
               { text: "Important", icon: <Star /> },
-              { text: "Assigned to Me", icon: <Assignment /> },
             ].map((item, index) => (
               <ListItem
                 component="li"
