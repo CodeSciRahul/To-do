@@ -19,7 +19,7 @@ const Sidebar: React.FC = () => {
   const navigate = useNavigate();
 
   return (
-    <div className={`w-64 ${themeValue === "dark" ? "bg-gray-800 opacity-90" : " bg-green-200"} h-full scroll-auto px-4 shadow-md`}>
+    <div className={`h-full w-64 ${themeValue === "dark" ? "bg-gray-800 opacity-90" : " bg-green-200"} h-full scroll-auto px-4 shadow-md`}>
       <div className="p-4 text-center">
         <Avatar
           src="https://via.placeholder.com/100"

@@ -28,11 +28,13 @@ const Login: React.FC = () => {
     try {
       // Simulate an API call delay
       await new Promise((resolve) => setTimeout(resolve, 1000));
-      const userInfo = { user: { userName: data.username, password: data.password } };
+      const userInfo = {
+        user: { userName: data.username, password: data.password },
+      };
       dispatch(setUserInfo(userInfo));
-      navigate("/")
+      navigate("/");
     } catch (error) {
-      alert("Login failed!");
+      console.log(error)
     }
   };
 
@@ -48,7 +50,10 @@ const Login: React.FC = () => {
         backgroundColor: "white",
       }}
     >
-      <Typography variant="h5" sx={{ marginBottom: "1rem", textAlign: "center" }}>
+      <Typography
+        variant="h5"
+        sx={{ marginBottom: "1rem", textAlign: "center" }}
+      >
         Login
       </Typography>
       <form onSubmit={handleSubmit(onSubmit)} noValidate>

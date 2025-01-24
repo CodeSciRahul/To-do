@@ -14,14 +14,17 @@ const TaskList: React.FC = () => {
   // Extract the filter type from the URL query params
   const searchParams = new URLSearchParams(location.search);
   const filter = searchParams.get("filter"); // "All Tasks", "Today", "Important"
-  console.log(filter)
 
   // Filter tasks based on the URL filter
   const filteredTasks = tasks.filter((task) => {
     if (filter === "Today") {
-      // Assuming the task has a `Date` property that matches today's date
+      // Check if task.Date is a valid date string or object
+      const taskDate = task.Date ? new Date(task.Date) : null;
+      if (taskDate === null || isNaN(taskDate.getTime())) {
+        return false; // Invalid date, skip this task
+      }
       const today = new Date().toISOString().split("T")[0]; // Get today's date in YYYY-MM-DD format
-      return task.Date === today;
+      return taskDate.toISOString().split("T")[0] === today;
     }
     if (filter === "Important") {
       // Show tasks with star: true
@@ -60,6 +63,7 @@ const TaskList: React.FC = () => {
                 title: task.task,
                 completed: task.completed,
                 star: task.star,
+                date: task?.Date ? new Date(task.Date) : new Date()
               }}
             />
           )
@@ -94,6 +98,7 @@ const TaskList: React.FC = () => {
                       title: task.task,
                       completed: task.completed,
                       star: task.star,
+                      date: task?.Date ? new Date(task.Date) : new Date()
                     }}
                   />
                 )
