@@ -39,12 +39,15 @@ export const CustomPieChart = () => {
             fill="#8884d8" // Default fill color
             label // Show labels on the pie slices
           >
-            {taskStats.map((entry, index) => (
-              <Cell
-                key={`cell-${index}`}
-                fill={COLORS[index % COLORS.length]} // Apply color based on index
-              />
-            ))}
+           {taskStats.map((entry, index) => (
+  <Cell
+    key={`cell-${index}`}
+    fill={COLORS[index % COLORS.length]} // Apply color based on index
+    name={entry.name} // Using entry for its 'name' property (if needed)
+
+  />
+))}
+
           </Pie>
           <Tooltip /> {/* Tooltip to show details on hover */}
           <Legend verticalAlign="bottom" height={36} /> {/* Legend at the bottom */}
