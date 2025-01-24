@@ -77,9 +77,6 @@ export const AddTask = () => {
       <List className="flex items-center space-x-4">
         <ListItem component="li" className="flex items-center space-x-2">
           <IconButton
-            className={`${
-              theme === "dark" ? "text-white" : "text-red-500"
-            }`}
             onClick={() => setShowCalendar((prev) => !prev)}
           >
             <CalendarMonth />
@@ -101,9 +98,6 @@ export const AddTask = () => {
           )}
 
           <IconButton
-            className={`${
-              theme === "dark" ? "text-white" : "text-red-500"
-            }`}
             onClick={() => setShowReminder((prev) => !prev)}
           >
             <NotificationsNoneOutlinedIcon />
@@ -119,9 +113,6 @@ export const AddTask = () => {
           )}
 
           <IconButton
-            className={`${
-              theme === "dark" ? "text-white" : "text-red-500"
-            }`}
             onClick={() => setShowRepeat((prev) => !prev)}
           >
             <RepeatIcon />

@@ -16,6 +16,7 @@ import { useAppSelecter } from "../Redux/Hooks/store";
 const Sidebar: React.FC = () => {
   const [active, setActive] = useState<string>("All Tasks");
   const themeValue = useAppSelecter((state) => state?.uiSetting?.theme)
+  const user = useAppSelecter((state) => state?.auth?.user)
   const navigate = useNavigate();
 
   return (
@@ -23,10 +24,10 @@ const Sidebar: React.FC = () => {
       <div className="p-4 text-center">
         <Avatar
           src="https://via.placeholder.com/100"
-          alt="User Avatar"
+          alt={`${user?.userName}`}
           className="mx-auto w-24 h-24"
         />
-        <h2 className="mt-2 text-lg font-semibold">Hey, ABCD</h2>
+        <h2 className="mt-2 text-lg font-semibold">Hey, {user?.userName}</h2>
       </div>
 
       {/* Navigation List */}
